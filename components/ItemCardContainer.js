@@ -23,7 +23,7 @@ const ItemCardContainer = ({ imageSrc, title, location, data }) => {
           </Text>
 
           <View className="flex-row items-center space-x-1">
-            <FontAwesome name="map-marker" size={20} color="#8597A2" />
+            <FontAwesome name="map-marker" size={20} color="#EE2B2B" />
             <Text className="text-[#0B646B] text-[14px] font-bold">
               {location?.length > 18 ? `${location.slice(0, 18)}..` : location}
             </Text>

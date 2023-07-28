@@ -47,8 +47,8 @@ const Discover = () => {
     <SafeAreaView className="flex-1 bg-white relative">
       <View className="flex-row items-center justify-between px-8">
         <View>
-          <Text className="text-[40px] text-[#0B646B] font-bold">Discover</Text>
-          <Text className="text-[#527283] text-[32px]">Hidden Paradise</Text>
+          <Text className="text-[40px] text-[#0B646B] font-bold">HN Noticias</Text>
+          <Text className="text-[#527283] text-[32px]">Página Principal</Text>
         </View>
 
         <View className="w-12 h-12 bg-gray-400 rounded-md items-center justify-center">
@@ -60,7 +60,7 @@ const Discover = () => {
       <View className="flex-row items-center bg-whitemx-4 rounded-xl py-1 px-4 shadow-lg mt-4">
         <GooglePlacesAutocomplete
           GooglePlacesDetailsQuery={{ fields: "geometry" }}
-          placeholder='Search'
+          placeholder='Buscar'
           fetchDetails={true}
           onPress={(data, details = null) => {
             // 'details' is provided when fetchDetails = true
@@ -81,7 +81,7 @@ const Discover = () => {
 
       {isLoading ? (
         <View className="flex-1 items-center justify-center">
-        <ActivityIndicator size="large" color="#0B646B" />
+        <ActivityIndicator size="large" color="#5DC1B9" />
       </View> ) : (
         <ScrollView>
         <View className=" flex-row items-center justify-between px-8 mt-8">
@@ -113,11 +113,11 @@ const Discover = () => {
         <View>
           <View className="flex-row items-center justify-between px-4 mt-8">
             <Text className="text-[#2C7379] text-[28px] font-bold">
-              Top Tips
+              Noticias
             </Text>
             <TouchableOpacity className="flex-row items-center justify-center space-x-2">
               <Text className="text-[#A0C4C7] text-[20px] font-bold">
-                Explore
+                Explorar
               </Text>
               <FontAwesome
                 name="long-arrow-right"
