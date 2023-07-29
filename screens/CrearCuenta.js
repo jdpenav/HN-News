@@ -45,7 +45,7 @@ const CrearCuenta = () => {
 
   return (
     <SafeAreaView className="flex-1 bg-white flex-co justify-items-center">
-      <Image source={require('../assets/pesonita2.gif')} className="mx-20" />
+      <Image source={require('../assets/pesonita2.gif')} className="mx-24" />
       <View className="flex bg-cyan-800 h-4/6 mx-4 rounded-xl py-1 px-2 shadow-lg ">
         <View className="flex-1 bg-cyan-700 h-96 m-4 rounded-xl py-1 px-4 shadow-lg shadow-black">
             <Text className="text-4xl mt-4 text-center text-white">Registrate</Text>
