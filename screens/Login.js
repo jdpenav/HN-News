@@ -51,12 +51,15 @@ const Login = () => {
             <Text className="text-4xl mt-4 text-center text-white">Bienvenido</Text>
             <TextInput className="bg-white m-2 rounded h-10 px-2" placeholder='Usuario'></TextInput>
             <TextInput className="bg-white m-2 rounded h-10 px-2" placeholder='Contraseña'></TextInput>
-            <TouchableOpacity className="bg-cyan-200 m-4 rounded h-10 p-3">
+            <TouchableOpacity className="bg-cyan-200 m-4 rounded h-10 p-3" onPress={() => navigation.navigate("Discover")}>
               <Text className="text-center font-extrabold">LOGIN</Text>
             </TouchableOpacity>
-            <Text className="text-center my-2 text-white">¿No tienes cuenta? Registrate</Text>
+            <Text className="text-center my-2 text-white" onPress={() => navigation.navigate("CrearCuenta")}>¿No tienes cuenta? Registrate</Text>
         </View>
-        <Text className="text-center my-2 text-white">Volver</Text> 
+        <Text className="text-center my-2 text-white" 
+        onPress={() => navigation.navigate("Inicio")}>
+          Volver
+        </Text> 
       </View> 
       
 
