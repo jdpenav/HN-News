@@ -1,8 +1,7 @@
-import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, Image, TouchableOpacity} from 'react-native'
 import React, { useLayoutEffect } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { HeroImage, Ronald2, noticias, NotFound } from '../assets';
 
 
 const HomeScreen = () => {
@@ -31,19 +30,19 @@ const HomeScreen = () => {
         <Text className="text-[#3C6072] text-[40px]">Honduras Noticias</Text>
         <Text className="text-[#38c8badd] text-[32px] font-bold ">Lo más relevante</Text>
         <Text className="text-[#3C6072] text-base">
-          Noticias relevantes, tanto nacionales cono internacionales.
+          Noticias relevantes, tanto nacionales como internacionales.
         </Text>
       </View>
 
 
       {/*Tercera Seccion Seccion */}
-      <View className="w-[400px] h-[400px] bg-[#023047] rounded-full absolute  bottom-28 -right-36"></View>
+      <View className="w-[350px] h-[350px] bg-[#023047] rounded-full absolute  bottom-28 -right-36"></View>
       <View className="w-[400px] h-[400px] bg-[#000000] rounded-full absolute -bottom-28 -left-36"></View>
 
 
       {/*Imagen */}
       <View className="flex-1 relative items-center justify-center">
-        <Image source={noticias} className="w-full h-full object-cover mt-20" />
+        <Image source={require('../assets/leer.png')} className="w-96 h-96 object-cover mt-10" />
       </View>
 
 

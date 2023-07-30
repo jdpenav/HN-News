@@ -22,12 +22,14 @@ const Login = () => {
     if(!nombreUsuario || !contrasena){
       Alert.alert("Debe rellenar ambos campos");
       res = true;
-    }
 
-    if(nombreUsuario !== usuario || contrasena !== contra){
+      
+    } else if(nombreUsuario !== usuario || contrasena !== contra){
       Alert.alert("Credenciales inválidas");
       res = true;
     }
+
+    
 
     return res;
   }
