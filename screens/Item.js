@@ -6,150 +6,65 @@ import { FontAwesome, FontAwesome5, MaterialIcons } from "@expo/vector-icons";
 
 const Item = ({ route }) => {
 
-    const navigation = useNavigation();
+  const navigation = useNavigation();
 
-    const data = route?.params?.param;
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerShown: false,
+    });
 
-    useLayoutEffect(() => {
-        navigation.setOptions({
-            headerShown: false,
-        });
-
-    }, []);
+  }, []);
 
 
+  return (
+    <SafeAreaView className="flex-1 bg-white relative">
+      <ScrollView className="flex-1 px-4 py-6">
+        <View className="relative bg-white shadow-lg">
+          <Image
+            source={{
+              uri:
+                "https://cope-cdnmed.agilecontent.com/img/brand/cope-redes-sociales.jpg"
+            }}
+            className="w-full h-72 object-cover rounded-2xl top-4"
+          />
 
-    console.log(data);
+          <View className="absolute flex-row inset-x-0 top-5 justify-between px-6">
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Discover", { param: data })}
+              className="w-10 h-10 rounded-md items-center justify-center bg-white">
+              <FontAwesome name="chevron-left" size={24} color="black" />
+            </TouchableOpacity>
 
-    return (
-        <SafeAreaView className="flex-1 bg-white relative">
-            <ScrollView className="flex-1 px-4 py-6">
-                <View className="relative bg-white shadow-lg">
-                    <Image
-                        source={{
-                            uri:
-                                data?.photo?.images?.large?.url ?
-                                    data?.photo?.images?.large?.url :
-                                    "https://images.squarespace-cdn.com/content/v1/58d736faf7e0ab027a0c2364/4d6640e1-85ec-4ae0-a373-3376a81e2a47/Spontaneous+Adventure+Ideas.jpg"
-                        }}
-                        className="w-full h-72 object-cover rounded-2xl top-4"
-                    />
 
-                    <View className="absolute flex-row inset-x-0 top-5 justify-between px-6">
-                        <TouchableOpacity  
-                        onPress={() => navigation.navigate("Discover", {param: data})}
-                        className="w-10 h-10 rounded-md items-center justify-center bg-white">
-                            <FontAwesome name="chevron-left" size={24} color="black" />
-                        </TouchableOpacity>
+          </View>
+        </View>
 
-                        <TouchableOpacity className="w-10 h-10 rounded-md items-center justify-center bg-[#06B2BE]">
-                        <FontAwesome name="heartbeat" size={24} color="black" />
-                        </TouchableOpacity>
-                    </View>
-                </View>
-
-                <View className="mt-6">
+        <View className="mt-6">
           <Text className="text-[#428288] text-[24px] font-bold">
-            {data?.name}
+            Bruselas aplaza sin fecha su decisión sobre la fusión de Orange y MásMóvil y les pide más información
           </Text>
           <View className="flex-row items-center space-x-2 mt-2">
             <FontAwesome name="map-marker" size={25} color="#8C9EA6" />
             <Text className="text-[#8C9EA6] text-[20px] font-bold">
-              {data?.location_string}
+              Bruselas, Belgica
             </Text>
           </View>
-        </View>
 
-        <View className="mt-4 flex-row items-center justify-between">
-          {data?.rating && (
-            <View className=" flex-row items-center space-x-2">
-              <View className="w-12 h-12 rounded-2xl bg-red-100 items-center justify-center shadow-md">
-                <FontAwesome name="star" size={24} color="#D58574" />
-              </View>
-              <View>
-                <Text className="text-[#515151]">{data?.rating}</Text>
-                <Text className="text-[#515151]">Ratings</Text>
-              </View>
-            </View>
-          )}
+          <View className="flex-row items-center space-x-2 mt-2">
+            <MaterialIcons name="date-range" size={25} color="#8C9EA6" />
+            <Text className="text-[#8C9EA6] text-[20px] font-bold">
+              2023-07-28
+            </Text>
+          </View>
 
-          {data?.price_level && (
-            <View className=" flex-row items-center space-x-2">
-              <View className="w-12 h-12 rounded-2xl bg-red-100 items-center justify-center shadow-md">
-                <MaterialIcons name="attach-money" size={24} color="black" />
-              </View>
-              <View>
-                <Text className="text-[#515151]">{data?.price_level}</Text>
-                <Text className="text-[#515151]">Price Level</Text>
-              </View>
-            </View>
-          )}
-
-          {data?.bearing && (
-            <View className=" flex-row items-center space-x-2">
-              <View className="w-12 h-12 rounded-2xl bg-red-100 items-center justify-center shadow-md">
-                <FontAwesome5 name="map-signs" size={24} color="black" />
-              </View>
-              <View>
-                <Text className="text-[#515151] capitalize">
-                  {data?.bearing}
-                </Text>
-                <Text className="text-[#515151]">Bearing</Text>
-              </View>
-            </View>
-          )}
-        </View>
-
-        {data?.description && (
           <Text className="mt-4 tracking-wide text-[16px] font-semibold text-[#97A6AF]">
-            {data?.description}
+            La Comisión Europea ha "parado el reloj" en su investigación sobre la fusión entre Orange y MásMóvil en España debido a que las compañías no han facilitado a tiempo determinada "información importante" solicitada por Bruselas, por lo que la decisión definitiva se tomará más allá del 4 de septiembre, fecha inicial fijada para aprobar o no la operación. Según ha señalado a Europa Press la portavoz comunitaria de Competencia, Arianna Podesta, este procedimiento en las investigaciones sobre fusiones se activa si las partes "no facilitan a tiempo una información importante que la Comisión Europea les ha solicitado". "Una vez que las partes facilitan la información que falta, el reloj vuelve a ponerse en marcha y el plazo para la decisión de la Comisión se ajusta en consecuencia", ha añadido. Asimismo, fuentes conocedoras de la situación también han indicado a Europa Press que la decisión de Bruselas busca "disponer de más tiempo para evaluar el impacto que tiene la operación sobre la competencia". Bruselas inició el pasado abril una investigación en profundidad para determinar si la operación, que creará un nuevo líder por clientes en España, podría poner en riesgo la competencia en la oferta de paquetes de servicios múltiples y en el servicio minorista de banda ancha móvil y fija. En ese sentido, a finales del pasado junio Bruselas retiró sus consideraciones sobre el impacto que esta operación podría tener en el mercado mayorista, es decir, en lo referente a que un operador ofrezca sus redes a otros. Sin embargo, señaló que teme que esta operación reduzca el número de operadores de redes en los mercados minoristas españoles de servicios de telecomunicaciones móviles e internet y ello redunde en "grandes subidas de precios" para los clientes finales. La operación fue notificada al Ejecutivo comunitario el pasado 13 de febrero y, tras la investigación abierta en abril y el pliego de cargos notificado a finales de junio el plazo final para tomar una decisión estaba fijado, en principio, para el 4 de septiembre. Sin embargo, tras la decisión de Bruselas de "parar el reloj" ese plazo se ha ampliado, si bien no se ha fijado una nueva fecha para tomar la decisión definitiva sobre esta operación, valorada en unos 18.600 millones de euros. De hecho, el consejero delegado de MásMóvil, Meinrad Spenger, deslizó este viernes durante la conferencia con analistas en el marco de la presentación de los resultados del segundo trimestre que su previsión es que Bruselas tome su decisión en el cuarto trimestre del año. EVITAR CONDICIONES En este contexto, unos de los principales objetivos de Orange y de MásMóvil en las negociaciones mantenidas hasta ahora con Bruselas es evitar la imposición de 'remedies', es decir, que las compañías se tengan que deshacer de determinados activos para cumplir con las reglas de competencia. En ese sentido, son varias las empresas del sector que están pendientes de la resolución para intentar adquirir algunos de esos posibles 'remedies'. El consejero delegado de Orange España, Ludovic Pech, aseguró a finales de junio que uno de los objetivos de la compañía en sus conversaciones con la Comisión Europea es disipar las dudas que mantiene Bruselas sobre el impacto de la operación en el mercado minorista e intentar evitar la imposición de condiciones. En ese sentido, Orange anunció la semana pasada el nombramiento de Jean-François Fallacher como presidente no ejecutivo de la empresa en España en pleno proceso de la operación de fusión con MásMóvil. Fallacher, que fue consejero delegado de Orange España entre septiembre de 2020 y abril de 2023, vuelve así a la compañía en España para lidiar con el proceso de fusión, el cual se anunció cuando él era el 'primer espada' de la empresa en el país.
           </Text>
-        )}
 
-        {data?.cuisine && (
-          <View className="flex-row gap-2 items-center justify-start flex-wrap mt-4">
-            {data?.cuisine.map((n) => (
-              <TouchableOpacity
-                key={n.key}
-                className="px-2 py-1 rounded-md bg-emerald-100"
-              >
-                <Text>{n.name}</Text>
-              </TouchableOpacity>
-            ))}
-          </View>
-        )}
-
-        <View className=" space-y-2 mt-4 bg-gray-100 rounded-2xl px-4 py-2">
-          {data?.phone && (
-            <View className="items-center flex-row space-x-6">
-              <FontAwesome name="phone" size={24} color="#428288" />
-              <Text className="text-lg">{data?.phone}</Text>
-            </View>
-          )}
-          {data?.email && (
-            <View className="items-center flex-row space-x-6">
-              <FontAwesome name="envelope" size={24} color="#428288" />
-              <Text className="text-lg">{data?.email}</Text>
-            </View>
-          )}
-          {data?.address && (
-            <View className="items-center flex-row space-x-6">
-              <FontAwesome name="map-pin" size={24} color="#428288" />
-              <Text className="text-lg">{data?.address}</Text>
-            </View>
-          )}
-
-          <View className="mt-4 px-4 py-4 rounded-lg bg-[#06B2BE] items-center justify-center mb-12">
-            <Text className="text-3xl font-semibold uppercase tracking-wider text-gray-100">
-              Book Now
-            </Text>
-          </View>
         </View>
-
-
-            </ScrollView>
-        </SafeAreaView>
-    )
+      </ScrollView>
+    </SafeAreaView>
+  )
 }
 
 export default Item
