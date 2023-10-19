@@ -2,7 +2,7 @@ import { View, Text, SafeAreaView, ScrollView, Image } from 'react-native'
 import React, { useLayoutEffect } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { TouchableOpacity } from 'react-native';
-import { FontAwesome, FontAwesome5, MaterialIcons } from "@expo/vector-icons";
+import { FontAwesome, MaterialIcons } from "@expo/vector-icons";
 
 const Item = ({ route }) => {
 
@@ -30,7 +30,7 @@ const Item = ({ route }) => {
 
           <View className="absolute flex-row inset-x-0 top-5 justify-between px-6">
             <TouchableOpacity
-              onPress={() => navigation.navigate("Discover", { param: data })}
+              onPress={() => navigation.navigate("Discover")}
               className="w-10 h-10 rounded-md items-center justify-center bg-white">
               <FontAwesome name="chevron-left" size={24} color="black" />
             </TouchableOpacity>

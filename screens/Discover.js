@@ -10,7 +10,7 @@ import ItemCardContainer from '../components/ItemCardContainer';
 import { getPlacesData } from '../api';
 
 
-
+ 
 const Discover = () => {
 
   const [type, setType] = useState("español");
@@ -22,6 +22,8 @@ const Discover = () => {
   const [tr_lng, setTr_lng] = useState(null);
 
   const navigation = useNavigation();
+
+  
 
 
 
